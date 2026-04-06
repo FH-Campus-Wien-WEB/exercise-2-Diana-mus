@@ -1,41 +1,113 @@
-@import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
-}
-
-img {
-  border-radius: 12px;
+body {
+    font-family: Trebuchet MS, sans-serif;
+    background-color: #e49fc4;
+    margin: 20px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 2vw;
+    background-color: gainsboro;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
 }
 
-span {
-  margin-right: 4px;
+.poster {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 12px;
+    display: block;
+}
+
+.movie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.movie-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.movie-top h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.movie-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 14px 24px;
+}
+
+.movie-details p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.genre-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
+    background-color: palevioletred;
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-block;
 }
 
-input {
-  width: 100%;
+.plot {
+    margin: 0;
+    line-height: 1.6;
 }
 
-select {
-  width: 100%;
+button {
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: palevioletred;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-textarea {
-  width: 100%;
+button:hover {
+    background-color: #de83be;
+}
+
+@media (max-width: 850px) {
+    article {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .movie-details {
+        grid-template-columns: 1fr;
+    }
+
+    .poster {
+        max-width: 260px;
+    }
 }
